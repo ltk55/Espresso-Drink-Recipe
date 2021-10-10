@@ -1,4 +1,5 @@
 import Link from "next/link";
+import SubHeader from "./SubHeader";
 
 export default function Layout({ children }) {
   return (
@@ -13,6 +14,7 @@ export default function Layout({ children }) {
           </a>
         </Link>
       </header>
+      <SubHeader />
 
       <div className="page-content">{children}</div>
 
