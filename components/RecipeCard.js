@@ -1,8 +1,10 @@
 import Link from "next/link";
 import Image from "next/image";
+import Ingredient from "./IngredientChip";
 
 export default function RecipeCard({ recipe }) {
-  const { title, slug, cookingTime, thumbnail } = recipe.fields;
+  console.log("test", recipe.fields);
+  const { title, slug, cookingTime, thumbnail, ingredients } = recipe.fields;
 
   return (
     <div className="card">
@@ -17,11 +19,11 @@ export default function RecipeCard({ recipe }) {
       <div className="content">
         <div className="info">
           <h4>{title}</h4>
-          <p>Takes approx {cookingTime} mins to make</p>
+          <Ingredient ingredients={ingredients} />
         </div>
         <div className="actions">
           <Link href={"/recipes/" + slug}>
-            <a>Cook this</a>
+            <a>Go to recipe</a>
           </Link>
         </div>
       </div>
@@ -42,12 +44,8 @@ export default function RecipeCard({ recipe }) {
           padding: 16px;
         }
         .info h4 {
-          margin: 4px 0;
+          margin: 4px 0 10px 0;
           text-transform: uppercase;
-        }
-        .info p {
-          margin: 0;
-          color: #777;
         }
         .actions {
           margin-top: 20px;
