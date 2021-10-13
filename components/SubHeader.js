@@ -22,6 +22,8 @@ export default function SubHeader() {
       <style jsx>{`
         .subHeader__text {
           text-align: center;
+          margin-top: 10px;
+          margin-bottom: 30px;
         }
       `}</style>
     </div>

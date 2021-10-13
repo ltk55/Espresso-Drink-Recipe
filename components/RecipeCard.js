@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
-import Ingredient from "./IngredientChip";
+import IngredientChip from "./IngredientChip";
 
 export default function RecipeCard({ recipe }) {
   console.log("test", recipe.fields);
@@ -19,7 +19,7 @@ export default function RecipeCard({ recipe }) {
       <div className="content">
         <div className="info">
           <h4>{title}</h4>
-          <Ingredient ingredients={ingredients} />
+          <IngredientChip ingredients={ingredients} />
         </div>
         <div className="actions">
           <Link href={"/recipes/" + slug}>
