@@ -1,5 +1,6 @@
 import { createClient } from "contentful";
 import RecipeCard from "../components/RecipeCard";
+import "material-icons/iconfont/material-icons.css";
 
 export async function getStaticProps() {
   const client = createClient({

@@ -11,6 +11,7 @@ export default function RecipeCard({ recipe }) {
       <div className="featured">
         <Image
           alt={title}
+          className="image"
           src={"https:" + thumbnail.fields.file.url}
           width={thumbnail.fields.file.details.image.width}
           height={thumbnail.fields.file.details.image.height}
@@ -23,14 +24,20 @@ export default function RecipeCard({ recipe }) {
         </div>
         <div className="actions">
           <Link href={"/recipes/" + slug}>
-            <a>Go to recipe</a>
+            <a>
+              <span className="material-icons-outlined arrow">
+                arrow_right_alt
+              </span>
+            </a>
           </Link>
         </div>
       </div>
 
       <style jsx>{`
         .card {
-          transform: rotateZ(-1deg);
+           {
+            /* transform: rotateZ(-1deg); */
+          }
         }
         .content {
           background: #fff;
@@ -39,6 +46,7 @@ export default function RecipeCard({ recipe }) {
           position: relative;
           top: -40px;
           left: -10px;
+          border-radius: 15px;
         }
         .info {
           padding: 16px;
@@ -48,15 +56,15 @@ export default function RecipeCard({ recipe }) {
           text-transform: uppercase;
         }
         .actions {
-          margin-top: 20px;
           display: flex;
           justify-content: flex-end;
         }
         .actions a {
-          color: #fff;
-          background: #f01b29;
+          color: black;
           padding: 16px 24px;
-          text-decoration: none;
+        }
+        .arrow {
+          font-size: 40px;
         }
       `}</style>
     </div>
